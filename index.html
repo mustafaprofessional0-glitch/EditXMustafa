@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EditXMustafa - Professional Graphic Designer, Video Editor, and Creative Lead. Specializing in video editing, graphic design, web development, and social media management.">
+    <meta name="keywords" content="graphic design, video editing, web development, social media management, creative services">
+    <meta name="author" content="Mustafa">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="EditXMustafa | Portfolio">
+    <meta property="og:description" content="Professional Graphic Designer, Video Editor, and Creative Lead">
+    <meta property="og:type" content="website">
+    <title>EditXMustafa | Portfolio - Graphic Design & Video Editing</title>
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mustafa",
+        "jobTitle": "Graphic Designer, Video Editor, Creative Lead",
+        "url": "https://editxmustafa.com",
+        "email": "mustafaprofessional0@gmail.com",
+        "telephone": "+92-322-5253517",
+        "knowsAbout": ["Graphic Design", "Video Editing", "Web Development", "Social Media Management"]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border-color: #334155;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        /* Dark/Light Mode */
+        body.light-mode {
+            --bg-color: #ffffff;
+            --card-bg: #f3f4f6;
+            --accent-color: #0ea5e9;
+            --text-main: #1f2937;
+            --text-dim: #6b7280;
+            --border-color: #e5e7eb;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: var(--accent-color);
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover,
+        .theme-toggle:focus {
+            background-color: var(--accent-color);
+            color: #000;
+            outline: 2px solid var(--accent-color);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 10px;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            animation: slideInUp 0.8s ease-out 0.1s both;
+        }
+
+        .contact-info {
+            color: var(--text-dim);
+            margin-bottom: 20px;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        .contact-info p {
+            margin: 8px 0;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-info a:hover,
+        .contact-info a:focus {
+            text-decoration: underline;
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* Section Styling */
+        section {
+            margin: 60px 0;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--accent-color);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        /* Table Styling */
+        .services-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        th, td {
+            padding: clamp(12px, 2vw, 20px);
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--border-color);
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        tbody tr {
+            transition: var(--transition);
+        }
+
+        tbody tr:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #000;
+            padding: 10px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+            outline: none;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-color);
+            color: #000;
+        }
+
+        /* Gallery/Carousel */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            cursor: pointer;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .gallery-item:hover,
+        .gallery-item:focus {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+            outline: 2px solid var(--accent-color);
+        }
+
+        .gallery-item-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-color), #0ea5e9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .gallery-item-content {
+            padding: 20px;
+        }
+
+        .gallery-item-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .gallery-item-description {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin-bottom: 15px;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: clamp(20px, 5vw, 40px);
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideInUp 0.3s ease-out;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-dim);
+            background: none;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover,
+        .modal-close:focus {
+            color: var(--accent-color);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--card-bg);
+            padding: clamp(20px, 5vw, 40px);
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 40px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--border-color);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-message {
+            display: none;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            animation: slideInUp 0.3s ease-out;
+        }
+
+        .form-message.success {
+            background-color: rgba(16, 185, 129, 0.2);
+            color: var(--success-color);
+            border: 1px solid var(--success-color);
+        }
+
+        .form-message.error {
+            background-color: rgba(239, 68, 68, 0.2);
+            color: var(--error-color);
+            border: 1px solid var(--error-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            main {
+                margin-top: 120px;
+            }
+
+            header {
+                padding: 40px 20px 30px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            th, td {
+                padding: 10px;
+                font-size: 0.85rem;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                --bg-color: #ffffff;
+                --card-bg: #f3f4f6;
+                --text-main: #1f2937;
+                --text-dim: #6b7280;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Main navigation">
+    <a href="#home" aria-label="Go to home">EditXMustafa</a>
+    <div class="nav-right">
+        <a href="#services" aria-label="Go to services section">Services</a>
+        <a href="#portfolio" aria-label="Go to portfolio section">Portfolio</a>
+        <a href="#contact" aria-label="Go to contact section">Contact</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode" title="Toggle theme">🌙</button>
+    </div>
+</nav>
+
+<main>
+    <div class="container">
+        <!-- Header -->
+        <header id="home">
+            <h1>EditXMustafa</h1>
+            <p class="subtitle">Graphic Designer | Video Editor | Creative Lead</p>
+            <div class="contact-info">
+                <p>📞 Phone: <strong><a href="tel:+923225253517">+92 322 5253517</a></strong></p>
+                <p>📧 Email: <strong><a href="mailto:mustafaprofessional0@gmail.com">mustafaprofessional0@gmail.com</a></strong></p>
+            </div>
+        </header>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Professional Services & Skills</h2>
+            <table class="services-table" role="table" aria-label="Services and skills table">
+                <thead>
+                    <tr>
+                        <th scope="col">Service / Skill</th>
+                        <th scope="col">Tools Used</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Video Editing</strong></td>
+                        <td>Adobe Premiere, CapCut</td>
+                        <td><button class="btn" data-project="video-editing" aria-label="View video editing portfolio">View Work</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Graphic Design</strong></td>
+                        <td>Photoshop, Illustrator</td>
+                        <td><button class="btn" data-project="graphic-design" aria-label="View graphic design portfolio">View Designs</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Web Development</strong></td>
+                        <td>HTML, CSS, JavaScript</td>
+                        <td><button class="btn" data-project="web-dev" aria-label="View web development projects">View Projects</button></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Social Media Management</strong></td>
+                        <td>Meta Business, TikTok, Instagram</td>
+                        <td><button class="btn" data-project="social-media" aria-label="View social media profile">Visit Profile</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio">
+            <h2>Featured Portfolio</h2>
+            <div class="gallery-container">
+                <div class="gallery-item" tabindex="0" role="button" data-project="video-1" aria-label="Video editing project 1">
+                    <div class="gallery-item-image">🎬</div>
+                    <div class="gallery-item-content">
+                        <div class="gallery-item-title">YouTube Intro</div>
+                        <div class="gallery-item-description">Professional video intro with transitions and effects</div>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0" role="button" data-project="design-1" aria-label="Graphic design project 1">
+                    <div class="gallery-item-image">🎨</div>
+                    <div class="gallery-item-content">
+                        <div class="gallery-item-title">Brand Identity</div>
+                        <div class="gallery-item-description">Complete branding package with logo and guidelines</div>
+                    </div>
+                </div>
+                <div class="gallery-item" tabindex="0" role="button" data-project="web-1" aria-label="Web development project 1">
+                    <div class="gallery-item-image">💻</div>
+                    <div class="gallery-item-content">
+                        <div class="gallery-item-title">E-commerce Site</div>
+                        <div class="gallery-item-description">Responsive e-commerce platform with modern UI</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <form class="contact-form" id="contactForm" aria-label="Contact form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required aria-required="true" placeholder="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required aria-required="true" placeholder="your.email@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required aria-required="true" placeholder="Project inquiry">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required aria-required="true" placeholder="Tell me about your project..."></textarea>
+                </div>
+                <button type="submit" class="btn" aria-label="Send contact form">Send Message</button>
+                <div id="formMessage" class="form-message" role="alert" aria-live="polite"></div>
+            </form>
+        </section>
+    </div>
+</main>
+
+<!-- Modal for Project Details -->
+<div id="projectModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <p id="modalDetails"></p>
+        <button class="btn" id="modalAction" aria-label="Primary action">Learn More</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2026 EditXMustafa. All rights reserved. | Crafted with ❤️ and code</p>
+</footer>
+
+<script>
+    // Project Data
+    const projects = {
+        'video-editing': {
+            title: 'Video Editing Portfolio',
+            description: 'Professional video editing services with expertise in Adobe Premiere and CapCut.',
+            details: 'I specialize in creating engaging video content with smooth transitions, color grading, and sound design.',
+            link: 'https://www.behance.net/',
+            action: 'View Portfolio'
+        },
+        'graphic-design': {
+            title: 'Graphic Design',
+            description: 'Custom graphic designs using industry-standard tools.',
+            details: 'From logo design to marketing materials, I create visually stunning designs tailored to your brand.',
+            link: 'https://www.behance.net/',
+            action: 'View Designs'
+        },
+        'web-dev': {
+            title: 'Web Development',
+            description: 'Responsive and modern web applications.',
+            details: 'I build beautiful, functional websites using HTML, CSS, and JavaScript with a focus on user experience.',
+            link: '#portfolio',
+            action: 'View Projects'
+        },
+        'social-media': {
+            title: 'Social Media Management',
+            description: 'Strategic social media content and management.',
+            details: 'Growing your social presence with engaging content across Meta platforms and TikTok.',
+            link: 'https://www.tiktok.com/',
+            action: 'Visit Profile'
+        },
+        'video-1': {
+            title: 'YouTube Intro',
+            description: 'Professional video intro with transitions and effects',
+            details: 'High-quality video intro perfect for YouTube channels. Features smooth transitions, professional color grading, and royalty-free music.',
+            link: '#',
+            action: 'Watch Now'
+        },
+        'design-1': {
+            title: 'Brand Identity Package',
+            description: 'Complete branding package with logo and guidelines',
+            details: 'Full brand identity system including logo, color palette, typography, and brand guidelines document.',
+            link: '#',
+            action: 'View Details'
+        },
+        'web-1': {
+            title: 'E-commerce Platform',
+            description: 'Responsive e-commerce platform with modern UI',
+            details: 'Fully responsive e-commerce website with product catalog, shopping cart, and secure checkout functionality.',
+            link: '#',
+            action: 'View Live'
+        }
+    };
+
+    // Dark/Light Mode Toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlElement = document.documentElement;
+
+    // Check saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        themeToggle.textContent = '☀️';
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        const isLightMode = document.body.classList.contains('light-mode');
+        themeToggle.textContent = isLightMode ? '☀️' : '🌙';
+        localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+    });
+
+    // Modal Functionality
+    const modal = document.getElementById('projectModal');
+    const modalClose = document.getElementById('modalClose');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalDetails = document.getElementById('modalDetails');
+    const modalAction = document.getElementById('modalAction');
+
+    function openModal(projectKey) {
+        const project = projects[projectKey];
+        if (project) {
+            modalTitle.textContent = project.title;
+            modalDescription.textContent = project.description;
+            modalDetails.textContent = project.details;
+            modalAction.textContent = project.action;
+            modalAction.onclick = () => {
+                window.open(project.link, '_blank');
+            };
+            modal.classList.add('show');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeModal() {
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Project Button Events
+    document.querySelectorAll('[data-project]').forEach(element => {
+        element.addEventListener('click', (e) => {
+            openModal(e.target.dataset.project);
+        });
+        element.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal(e.target.dataset.project);
+            }
+        });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+
+    // Contact Form
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Basic validation
+        if (!name || !email || !subject || !message) {
+            showMessage('Please fill in all fields.', 'error');
+            return;
+        }
+
+        if (!isValidEmail(email)) {
+            showMessage('Please enter a valid email address.', 'error');
+            return;
+        }
+
+        // Simulate form submission (in production, send to backend)
+        const formData = {
+            name,
+            email,
+            subject,
+            message,
+            timestamp: new Date().toISOString()
+        };
+
+        // Store in localStorage for demo purposes
+        const submissions = JSON.parse(localStorage.getItem('formSubmissions') || '[]');
+        submissions.push(formData);
+        localStorage.setItem('formSubmissions', JSON.stringify(submissions));
+
+        showMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
+        contactForm.reset();
+
+        // Log to console (in production, send to server)
+        console.log('Form submitted:', formData);
+    });
+
+    function showMessage(text, type) {
+        formMessage.textContent = text;
+        formMessage.className = `form-message ${type}`;
+        formMessage.style.display = 'block';
+
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 5000);
+    }
+
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    // Smooth scroll behavior for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && document.querySelector(href)) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView();
+            }
+        });
+    });
+
+    // Keyboard navigation for gallery items
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                item.click();
+            }
+        });
+    });
+
+    console.log('Portfolio loaded successfully! User:', 'mustafaprofessional0-glitch');
+</script>
+
+</body>
+</html>
